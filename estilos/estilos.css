@@ -1,0 +1,534 @@
+/* =========================================================
+   MODO CHIPÁ — estilos.css
+   ---------------------------------------------------------
+   Landing mobile-first, responsive hasta 1440px.
+   Carga DESPUÉS de bootstrap.min.css (CDN), así que puede
+   pisar reglas de Bootstrap cuando hace falta.
+
+   Orden del archivo:
+     1) Paleta y variables
+     2) Base (html/body, tipografías, secciones)
+     3) Header / Nav
+     4) Sección Inicio (logo H1 + tríptico de fotos)
+     5) Marco de foto (frame dorado, compartido)
+     6) Sección Historia (texto de presentación)
+     7) Sección Lo Casero (carousel x3 + texto al pie)
+     8) Sección Pedido (foto + botones de contacto)
+     9) Footer
+    10) Fade-in al scrollear (solo PC)
+
+   Breakpoints:
+     - Mobile: estilos base (sin media query).
+     - Tablet: @media (min-width: 768px).
+     - PC:     @media (min-width: 1024px).
+   ========================================================= */
+
+/* ============================================
+   1) Paleta y variables
+   ============================================ */
+:root {
+    --marron-950: #24140a;   /* footer, máximo contraste */
+    --marron-800: #3b2415;   /* títulos, texto fuerte, botones */
+    --marron-700: #4a2c17;   /* nav links, texto secundario oscuro */
+    --marron-500: #7a5a42;   /* texto suave sobre crema */
+    --mostaza-600: #e8a430;  /* acento principal (del logo) */
+    --mostaza-500: #f0b23e;  /* hover / detalles */
+    --mostaza-300: #f7ce7e;  /* acentos suaves */
+    --crema-100: #fbf1e2;    /* fondo general */
+    --crema-50: #fffaf2;     /* tarjetas / header */
+}
+
+/* ============================================
+   2) Base
+   ============================================ */
+/* scrollbar-gutter reserva el espacio de la barra de scroll SIEMPRE (haya
+   o no scroll en ese momento), para que el contenido centrado no "salte"
+   ni quede más pegado a un lado que al otro cuando aparece/desaparece. */
+html {
+    scrollbar-gutter: stable both-edges;
+}
+
+html, body {
+    overflow-x: hidden; /* más compatible que "clip" en navegadores viejos */
+    width: 100%;
+    max-width: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--crema-100);
+    color: var(--marron-700);
+    font-family: 'Nunito Sans', system-ui, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Red de seguridad: las fotos nunca pueden ser más anchas que su
+   contenedor (evita que una imagen empuje el ancho de la página). */
+img {
+    max-width: 100%;
+}
+
+h1, h2, h3 {
+    font-family: 'Fraunces', 'Georgia', serif;
+    color: var(--marron-800);
+    margin: 0;
+}
+
+h2 {
+    font-size: clamp(1.6rem, 4vw, 2.25rem);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--marron-800);
+    text-decoration: none;
+}
+
+/* Aire vertical de todas las secciones — se agranda en tablet/PC */
+section {
+    padding: 56px 0;
+}
+
+@media (min-width: 768px) {
+    section {
+        padding: 84px 0;
+    }
+}
+
+@media (min-width: 1024px) {
+    section {
+        padding: 110px 0;
+    }
+}
+
+/* Etiqueta pequeña en mostaza, mayúsculas, arriba de cada título de sección */
+.eyebrow {
+    display: inline-block;
+    color: var(--mostaza-600);
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+}
+
+/* Botón principal (pill) mostaza — CTA del hero */
+.btn-mostaza {
+    background-color: var(--mostaza-600);
+    color: var(--marron-950);
+    border: none;
+    border-radius: 50px;
+    padding: 14px 34px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: background-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 8px 20px rgba(232, 164, 48, 0.35);
+}
+
+.btn-mostaza:hover {
+    background-color: var(--mostaza-500);
+    color: var(--marron-950);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 26px rgba(232, 164, 48, 0.45);
+}
+
+/* ============================================
+   3) Header / Nav
+   ============================================ */
+header {
+    background-color: var(--crema-50);
+    border-bottom: 2px solid transparent;
+    border-image: linear-gradient(to right, transparent 0%, var(--mostaza-600) 50%, transparent 100%) 1;
+    box-shadow: 0 2px 14px rgba(59, 36, 21, 0.06);
+}
+
+@media (min-width: 1024px) {
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 1030;
+    }
+
+    html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 90px;
+    }
+}
+
+.navbar {
+    padding: 10px 0;
+}
+
+.brand-mark {
+    height: 44px;
+    width: auto;
+    display: block;
+}
+
+@media (min-width: 768px) {
+    .brand-mark {
+        height: 52px;
+    }
+}
+
+.nav-link {
+    color: var(--marron-700) !important;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    padding: 10px 16px !important;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    color: var(--mostaza-600) !important;
+}
+
+.nav-link-cta {
+    background-color: var(--marron-800);
+    color: var(--crema-100) !important;
+    border-radius: 50px;
+    padding: 10px 22px !important;
+    margin-left: 6px;
+}
+
+.nav-link-cta:hover {
+    background-color: var(--mostaza-600);
+    color: var(--marron-950) !important;
+}
+
+.navbar-toggler {
+    border: none;
+    box-shadow: none;
+    padding: 4px 8px;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.navbar-toggler-icon {
+    filter: invert(18%) sepia(35%) saturate(1200%) hue-rotate(-10deg);
+}
+
+@media (max-width: 767px) {
+    .navbar-collapse {
+        text-align: center;
+        padding: 14px 0 6px;
+    }
+
+    .nav-link-cta {
+        display: inline-block;
+        margin: 8px 0 0;
+    }
+}
+
+/* ============================================
+   4) Sección Inicio — logo H1 + tríptico
+   ============================================ */
+#inicio {
+    padding-top: 48px;
+}
+
+@media (min-width: 768px) {
+    #inicio {
+        padding-top: 64px;
+    }
+}
+
+.intro-logo {
+    margin-bottom: 36px;
+}
+
+.logo-h1 {
+    width: 100%;
+    max-width: 230px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+
+@media (min-width: 768px) {
+    .logo-h1 {
+        max-width: 320px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .logo-h1 {
+        max-width: 380px;
+    }
+}
+
+.tagline {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: var(--marron-500);
+    font-size: clamp(1rem, 2.6vw, 1.3rem);
+    margin: 18px 0 26px;
+}
+
+.hero-triptico {
+    margin-top: 8px;
+}
+
+/* Carousel del hero en mobile: misma proporción 4:5 que las fotos ya
+   recortadas, así el navegador nunca tiene que "adivinar" ni cortar. */
+#heroCarousel .carousel-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 18px;
+}
+
+#heroCarousel .carousel-indicators button {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background-color: var(--marron-800);
+    opacity: 0.35;
+}
+
+#heroCarousel .carousel-indicators button.active {
+    opacity: 1;
+    background-color: var(--mostaza-600);
+}
+
+#heroCarousel .carousel-control-prev-icon,
+#heroCarousel .carousel-control-next-icon {
+    filter: invert(1);
+    background-color: rgba(59, 36, 21, 0.55);
+    border-radius: 50%;
+    padding: 18px;
+    background-size: 50%;
+}
+
+/* ============================================
+   5) Marco de foto — compartido por tríptico, carousel casero y pedido.
+   Truco de dos backgrounds (padding-box / border-box) para el marco
+   degradado mostaza, sin recortar nunca la imagen interior.
+   ============================================ */
+.foto-marco {
+    margin: 0;
+    padding: 10px;
+    border-radius: 22px;
+    background:
+        linear-gradient(var(--crema-50), var(--crema-50)) padding-box,
+        linear-gradient(135deg, rgba(232, 164, 48, 0.9) 0%, rgba(232, 164, 48, 0.25) 55%, rgba(232, 164, 48, 0.05) 100%) border-box;
+    border: 2px solid transparent;
+    box-shadow: 0 14px 30px rgba(59, 36, 21, 0.12);
+}
+
+.foto-marco img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 14px;
+}
+
+/* ============================================
+   6) Sección Historia — texto de presentación
+   ============================================ */
+#historia {
+    background-color: var(--crema-50);
+}
+
+.presentacion {
+    font-size: clamp(1.05rem, 2.4vw, 1.25rem);
+    line-height: 1.85;
+    color: var(--marron-700);
+    margin: 0;
+}
+
+/* ============================================
+   7) Sección Lo Casero — carousel x3 + texto al pie
+   ============================================ */
+.carousel-casero {
+    margin-top: 28px;
+}
+
+.carousel-casero .carousel-inner {
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 18px 40px rgba(59, 36, 21, 0.16);
+}
+
+.carousel-casero .carousel-item img {
+    width: 100%;
+    height: auto;
+}
+
+.carousel-casero .carousel-indicators button {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background-color: var(--marron-800);
+    opacity: 0.35;
+}
+
+.carousel-casero .carousel-indicators button.active {
+    opacity: 1;
+    background-color: var(--mostaza-600);
+}
+
+.carousel-casero .carousel-control-prev-icon,
+.carousel-casero .carousel-control-next-icon {
+    filter: invert(1);
+    background-color: rgba(59, 36, 21, 0.55);
+    border-radius: 50%;
+    padding: 18px;
+    background-size: 50%;
+}
+
+.pie-casero {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: var(--marron-500);
+    font-size: clamp(1.05rem, 2.4vw, 1.2rem);
+    line-height: 1.8;
+    max-width: 640px;
+    margin: 30px auto 0;
+}
+
+/* ============================================
+   8) Sección Pedido — foto de marca + botones de contacto
+   ============================================ */
+#pedido {
+    background-color: var(--crema-50);
+}
+
+#pedido h2 {
+    margin-top: 6px;
+}
+
+.pedido-texto {
+    color: var(--marron-500);
+    font-size: 1.05rem;
+    margin-bottom: 26px;
+}
+
+.contacto-botones {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+@media (min-width: 480px) {
+    .contacto-botones {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+.btn-contacto {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background-color: var(--marron-800);
+    color: var(--crema-100);
+    border-radius: 50px;
+    padding: 14px 26px;
+    font-weight: 700;
+    flex: 1 1 auto;
+    justify-content: center;
+    transition: background-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 10px 22px rgba(59, 36, 21, 0.18);
+}
+
+.btn-contacto i {
+    font-size: 1.3rem;
+    color: var(--mostaza-500);
+}
+
+.btn-contacto small {
+    display: block;
+    font-weight: 600;
+    font-size: 0.72rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    opacity: 0.75;
+    line-height: 1.4;
+}
+
+.btn-contacto:hover {
+    background-color: var(--marron-700);
+    color: var(--crema-100);
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px rgba(59, 36, 21, 0.26);
+}
+
+/* Los dos botones ahora son WhatsApp: mismo fondo marrón + ícono mostaza
+   para que contraste bien en los dos (ya no hay variante mostaza/marrón
+   distinta entre "llamar" y "WhatsApp"). */
+.btn-contacto-whatsapp {
+    background-color: var(--marron-800);
+    color: var(--crema-100);
+}
+
+.btn-contacto-whatsapp i {
+    color: var(--mostaza-500);
+}
+
+.btn-contacto-whatsapp:hover {
+    background-color: var(--marron-700);
+    color: var(--crema-100);
+}
+
+/* ============================================
+   9) Footer
+   ============================================ */
+footer {
+    background-color: var(--marron-950);
+    padding: 46px 0 30px;
+}
+
+.footer-logo {
+    height: 40px;
+    width: auto;
+    margin-bottom: 20px;
+}
+
+.footer-social {
+    margin: 0 0 18px;
+}
+
+.footer-social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid rgba(247, 206, 126, 0.4);
+    color: var(--mostaza-300);
+    font-size: 1.15rem;
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.footer-social a:hover {
+    background-color: var(--mostaza-600);
+    color: var(--marron-950);
+}
+
+.footer-copy {
+    color: rgba(251, 241, 226, 0.65);
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+/* ============================================
+   10) Fade-in al scrollear — solo PC (≥1024px)
+   ============================================ */
+@media (min-width: 1024px) {
+    main > section.fade-in-pending {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 0.9s ease-out, transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    main > section.fade-in-pending.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
