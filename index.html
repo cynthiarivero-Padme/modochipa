@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modo Chipá · Chipá casero congelado, listo para hornear</title>
+    <meta name="description" content="Modo Chipá: chipá casero congelado, artesanal, listo para hornear. Hacé tu pedido por WhatsApp o llamada.">
+
+    <!-- Bootstrap 5 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+    <!-- Google Fonts: Fraunces (títulos, cálida/artesanal) + Nunito Sans (texto) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;1,500&family=Nunito+Sans:wght@400;600;700;800&display=swap">
+
+    <link rel="icon" type="image/png" href="multimedia/logo-modo-chipa.png">
+    <link rel="stylesheet" href="estilos/estilos.css">
+</head>
+<body>
+
+    <!-- ============================================
+         HEADER — nav sticky con isotipo chico
+         ============================================ -->
+    <header>
+        <nav class="navbar navbar-expand-md">
+            <div class="container">
+                <a class="navbar-brand" href="#inicio">
+                    <img src="multimedia/logo-modo-chipa.png" alt="Modo Chipá" class="brand-mark" width="2938" height="1707">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="menuPrincipal">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#historia">Nuestra historia</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#casero">Lo casero</a></li>
+                        <li class="nav-item"><a class="nav-link nav-link-cta" href="#pedido">Hacé tu pedido</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- ============================================
+             01 INICIO — logo grande como H1 + triptico de fotos
+             ============================================ -->
+        <section id="inicio">
+            <div class="container text-center intro-logo">
+                <h1>
+                    <img src="multimedia/logo-modo-chipa.png" alt="Modo Chipá" class="logo-h1" width="2938" height="1707">
+                </h1>
+                <p class="tagline">Chipá casero congelado, listo para hornear</p>
+                <a href="#pedido" class="btn btn-mostaza">Hacé tu pedido</a>
+            </div>
+
+            <div class="container hero-triptico">
+                <!-- Mobile (xs/sm): carousel de 1 foto por vez -->
+                <div id="heroCarousel" class="carousel slide d-md-none" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="multimedia/hero-1.jpg" class="d-block w-100" alt="Chipá recién horneado saliendo del horno" width="1000" height="1250">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="multimedia/hero-2.jpg" class="d-block w-100" alt="Manos amasando chipá de forma artesanal" width="1000" height="1250">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="multimedia/hero-3.jpg" class="d-block w-100" alt="Bolsa de chipá congelado Modo Chipá" width="1000" height="1250">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Anterior</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Siguiente</span>
+                    </button>
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Foto 1"></button>
+                        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Foto 2"></button>
+                        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Foto 3"></button>
+                    </div>
+                </div>
+
+                <!-- Tablet/PC (md+): grid de 3 columnas, mismo alto, ninguna imagen recortada por el cuadro -->
+                <div class="row g-3 g-lg-4 d-none d-md-flex">
+                    <div class="col-md-4">
+                        <figure class="foto-marco">
+                            <img src="multimedia/hero-1.jpg" class="img-fluid" alt="Chipá recién horneado saliendo del horno" width="1000" height="1250">
+                        </figure>
+                    </div>
+                    <div class="col-md-4">
+                        <figure class="foto-marco">
+                            <img src="multimedia/hero-2.jpg" class="img-fluid" alt="Manos amasando chipá de forma artesanal" width="1000" height="1250">
+                        </figure>
+                    </div>
+                    <div class="col-md-4">
+                        <figure class="foto-marco">
+                            <img src="multimedia/hero-3.jpg" class="img-fluid" alt="Bolsa de chipá congelado Modo Chipá" width="1000" height="1250">
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             02 HISTORIA — texto de presentación de la marca
+             ============================================ -->
+        <section id="historia">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-9 col-xl-8 text-center">
+                        <span class="eyebrow">Nuestra historia</span>
+                        <p class="presentacion">
+                            Modo Chipá nace de la pasión de Guadalupe por los sabores caseros y el auténtico
+                            chipá artesanal. Cada receta está elaborada con ingredientes de calidad, mucho queso
+                            y el cuidado de lo hecho a mano, para llevar a cada hogar un sabor que invita a
+                            compartir y disfrutar en cualquier momento.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             03 LO CASERO — carousel de 3 fotos + texto al pie
+             ============================================ -->
+        <section id="casero">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-10 col-xl-8">
+                        <span class="eyebrow d-block text-center">Lo casero se nota</span>
+
+                        <div id="caseroCarousel" class="carousel slide carousel-casero" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="multimedia/casero-1.jpg" class="d-block w-100" alt="Chipá congelado Modo Chipá, listo para hornear" width="1000" height="1250">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="multimedia/casero-2.jpg" class="d-block w-100" alt="Chipá recién horneado para compartir en casa" width="1000" height="1250">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="multimedia/casero-3.jpg" class="d-block w-100" alt="Textura del chipá con queso derretido" width="1000" height="1250">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#caseroCarousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Anterior</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#caseroCarousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Siguiente</span>
+                            </button>
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#caseroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Foto 1"></button>
+                                <button type="button" data-bs-target="#caseroCarousel" data-bs-slide-to="1" aria-label="Foto 2"></button>
+                                <button type="button" data-bs-target="#caseroCarousel" data-bs-slide-to="2" aria-label="Foto 3"></button>
+                            </div>
+                        </div>
+
+                        <p class="pie-casero text-center">
+                            Cuando algo está hecho a mano, se nota. Se nota en el aroma, en la textura y en ese
+                            sabor único que solo lo casero puede ofrecer. Así nace cada chipá de Modo Chipá.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             04 PEDIDO — foto de marca + teléfonos
+             ============================================ -->
+        <section id="pedido">
+            <div class="container">
+                <div class="row align-items-center g-4 g-lg-5">
+                    <div class="col-12 col-lg-6">
+                        <figure class="foto-marco foto-marco-pedido">
+                            <img src="multimedia/final.jpg" class="img-fluid" alt="Chipá Modo Chipá, bolsa congelada lista para hornear" width="1000" height="1250">
+                        </figure>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <span class="eyebrow">Hacé tu pedido</span>
+                        <h2>Reservá tu chipá casero</h2>
+                        <p class="pedido-texto">
+                            Coordinamos por WhatsApp. Elegí la opción que prefieras y te
+                            respondemos a la brevedad.
+                        </p>
+                        <div class="contacto-botones">
+                            <a href="https://wa.me/5491167356427" target="_blank" rel="noopener" class="btn btn-contacto">
+                                <i class="bi bi-whatsapp"></i>
+                                <span>
+                                    <small>WhatsApp</small>
+                                    11 6735-6427
+                                </span>
+                            </a>
+                            <a href="https://wa.me/5491161609322" target="_blank" rel="noopener" class="btn btn-contacto btn-contacto-whatsapp">
+                                <i class="bi bi-whatsapp"></i>
+                                <span>
+                                    <small>WhatsApp</small>
+                                    11 6160-9322
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer>
+        <div class="container text-center">
+            <img src="multimedia/logo-modo-chipa-white.png" alt="Modo Chipá" class="footer-logo" width="2861" height="1664">
+            <ul class="list-unstyled footer-social">
+                <li><a href="https://www.instagram.com/modo_chipa" target="_blank" rel="noopener" aria-label="Instagram de Modo Chipá"><i class="bi bi-instagram"></i></a></li>
+            </ul>
+            <p class="footer-copy">&copy; 2026 Modo Chipá. Hecho a mano, con cariño.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Fade-in suave al scrollear, solo en pantallas grandes (PC).
+        if (window.matchMedia('(min-width: 1024px)').matches) {
+            const secciones = document.querySelectorAll('main > section:not(:first-of-type)');
+            secciones.forEach(s => s.classList.add('fade-in-pending'));
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0, rootMargin: '0px 0px -100px 0px' });
+
+            secciones.forEach(s => observer.observe(s));
+        }
+    </script>
+</body>
+</html>
